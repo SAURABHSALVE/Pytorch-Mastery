@@ -122,11 +122,11 @@ def objective(trial):
   optimizer = optim.SGD(model.parameters(), lr=0.1, weight_decay=1e-4)
 
   if optimizer_name == 'Adam':
-    optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
   elif optimizer_name == 'SGD':
-    optim.SGD(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+    optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
   else:
-    optim.RMSprop(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+    optimizer = optim.RMSprop(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
   # training loop
 
